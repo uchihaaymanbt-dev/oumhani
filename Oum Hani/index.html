@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى Oum Hani ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- الصفحة الأولى: صفحة الرمز السري -->
+    <div id="login-page" class="page active">
+        <div class="welcome-container">
+            <!-- مكان الصورة -->
+            <div class="image-placeholder">
+                <img src="WhatsApp Image 2026-10-24 at 19.48.24.jpeg" alt="صورة Oum Hani" id="main-image">
+            </div>
+            
+            <h1>مرحباً بك يا Oum Hani ❤️</h1>
+            <p>أدخلي الرمز السري لتعرفي ما بداخلي</p>
+        </div>
+
+        <div class="pin-container">
+            <input type="password" id="pin-input" readonly placeholder="****">
+            <p id="error-message"></p>
+
+            <div class="keypad">
+                <button class="key" onclick="appendNumber(1)">1</button>
+                <button class="key" onclick="appendNumber(2)">2</button>
+                <button class="key" onclick="appendNumber(3)">3</button>
+                <button class="key" onclick="appendNumber(4)">4</button>
+                <button class="key" onclick="appendNumber(5)">5</button>
+                <button class="key" onclick="appendNumber(6)">6</button>
+                <button class="key" onclick="appendNumber(7)">7</button>
+                <button class="key" onclick="appendNumber(8)">8</button>
+                <button class="key" onclick="appendNumber(9)">9</button>
+                <button class="key clear" onclick="clearPin()">مسح</button>
+                <button class="key" onclick="appendNumber(0)">0</button>
+                <button class="key enter" onclick="checkPin()">Entrer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- الصفحة الثانية: صفحة البطاقات -->
+    <div id="cards-page" class="page">
+        <h2>اختاري بطاقة يا Oum Hani ✨</h2>
+        <p class="subtitle">(يمكنك الضغط على البطاقة لقلبها)</p>
+        
+        <div class="cards-container">
+            <!-- البطاقة الأولى -->
+            <div class="card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">❤️</div>
+                    <div class="card-back">i love you soo much</div>
+                </div>
+            </div>
+            
+            <!-- البطاقة الثانية -->
+            <div class="card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">💖</div>
+                    <div class="card-back">You are beautiful</div>
+                </div>
+            </div>
+            
+            <!-- البطاقة الثالثة -->
+            <div class="card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">💕</div>
+                    <div class="card-back">You are wonderful</div>
+                </div>
+            </div>
+
+            <!-- البطاقة الرابعة (الخاصة بالانتقال) -->
+            <div class="card" onclick="goToThirdPage(this)">
+                <div class="card-inner">
+                    <div class="card-front">💌</div>
+                    <div class="card-back" style="font-size: 18px;">اضغطي لاكتشاف المزيد</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- الصفحة الثالثة: صفحة الطلبات -->
+    <div id="requests-page" class="page">
+        <h2>.</h2>
+        
+        <div class="requests-container">
+            <p class="request-item">📸 ارسلي لي افضل صورة بالنسبة لك</p>
+            <p class="request-item">🗣️ قولي لي ما اكتر شيئ تريدين سماعه اليوم</p>
+            <p class="request-item">💋 اريد قبلة منك 🙂</p>
+        </div>
+
+        <button class="back-btn" onclick="goBackToCards()">العودة للبطاقات</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

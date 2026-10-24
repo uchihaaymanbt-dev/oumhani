@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    padding: 20px;
+}
+
+.page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.page.active {
+    display: flex;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.image-placeholder {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    border: 4px solid #ff4b82;
+    overflow: hidden;
+    background-color: #ffe6ea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1 { color: #ff4b82; font-size: 24px; margin-bottom: 10px; }
+
+.pin-container { margin-top: 20px; width: 100%; }
+
+#pin-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid #ffb6c1;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    letter-spacing: 5px;
+    background: #fffafa;
+}
+
+#error-message {
+    color: #d90429;
+    font-weight: bold;
+    min-height: 25px;
+    margin-bottom: 15px;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.key {
+    background: #ffb6c1;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: bold;
+}
+
+.key:hover { background: #ff4b82; }
+.key.enter { background: #ff4b82; }
+.key.clear { background: #a8a8a8; }
+
+#cards-page h2, #requests-page h2 {
+    color: #ff4b82;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+}
+
+.card {
+    background-color: transparent;
+    width: 100%;
+    height: 100px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 10px;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    color: white;
+    font-size: 35px;
+}
+
+.card-back {
+    background: white;
+    color: #ff4b82;
+    transform: rotateY(180deg);
+    border: 2px solid #ff7eb3;
+}
+
+/* تنسيقات الصفحة الثالثة (الطلبات) */
+.requests-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.request-item {
+    background: #ffe6ea;
+    padding: 15px;
+    border-radius: 10px;
+    border-right: 5px solid #ff4b82; /* شريط جانبي للزينة */
+    color: #ff4b82;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: right;
+}
+
+.back-btn {
+    margin-top: 25px;
+    background: #ffb6c1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    background: #a8a8a8;
+}
